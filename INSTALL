@@ -1,0 +1,69 @@
+++++++++++++++++++++++++++++
+INSTALLATION
+++++++++++++++++++++++++++++
+
+
+Librairie externe
+==================
+
+La librairie moxieapps.gwt.uploader utilisée pour l'upload des videos doit etre génerée et installée dans le repository maven local.
+
+- récupérer les sources sur github: http://www.moxiegroup.com/moxieapps/gwt-uploader/
+- creer l'artifact maven:
+mvn install:install-file  -Dfile=./lib/org.moxieapps.gwt.uploader-1.1.0.jar -DgroupId=org.moxieapps -DartifactId=org.moxieapps.gwt.uploader -Dversion=1.1.0 -Dpackaging=jar -DgeneratePom=true
+
+
+Compilation et packaging du StreamManager
+==========================================
+
+packaging: mvn clean package -P<profile>
+
+Une archive StreamManagerXXX.tar.gz est créée.
+Elle contient les fichiers:
+
+- StreamManagerXXX.xml à configurer puis à copier dans le repertoire /conf/Catalina/localhost de tomcat
+- StreamManagerXXX.war à copier dans le répertoire /webapps de tomcat
+
+
+Profile maven
+================
+
+POUR LES EQUIPES EXTERNES
+1/Profil par defaut:
+
+mvn clean package
+
+>> streammanager-1.2-SNAPSHOT.tar.gz
+	- StreamManager.war
+	- StreamManager.xml
+
+	
+UNIQUEMENT POUR L'EQUIPE NEWTV	
+2/ Profil 'prod' pour déployer l'application de prod en interne (NewTV)
+
+mvn clean package -Pprod
+
+>> streammanager-1.2-SNAPSHOT-prod.tar.gz
+	- StreamManagerProd.war
+	- StreamManagerProd.xml  (reste à configurer les mots de passe)
+	
+>> remarque: à deployer sur tomcat en enlevant le suffixe Prod pour obtenir une url http://<IP>:8080/StreamManager
+
+
+UNIQUEMENT POUR L'EQUIPE NEWTV	
+3/ Profil 'dev' pour déployer l'application de dev en interne (NewTV)
+
+mvn clean package -Pdev
+
+>> streammanager-1.2-SNAPSHOT-dev.tar.gz
+	- StreamManagerDev.war
+	- StreamManagerDev.xml (reste à configurer les mots de passe)
+
+
+
+CONSEILS d'INSTALLATION
+=======================
+
+- arreter tomcat avant de faire la copie des fichiers *war et *xml
+
+- si mise à jour, désinstaller l'application avec le Tomcat manager puis procéder comme pour une première installation.

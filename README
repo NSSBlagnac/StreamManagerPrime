@@ -1,2 +1,7 @@
-StreamManager README
-Orange TV Blagnac
+Le projet StreamManager est un projet java/GWT-RPC/maven developpe par Orange (NewTV)
+
+C'est un des 3 modules du Streamer de flux IP (Equipe Orange NewTV)
+
+- GUI: StreamManager
+- Streamming et injection des eit: multicat-supervisor
+- base Mysql MyTVTools
