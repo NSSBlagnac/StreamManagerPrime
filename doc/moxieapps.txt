@@ -1,0 +1,10 @@
+Moxies apps upload
+===================
+http://www.moxiegroup.com/moxieapps/gwt-uploader/
+
+
+
+
+Creation artifact maven
+========================
+mvn install:install-file  -Dfile=./lib/org.moxieapps.gwt.uploader-1.1.0.jar -DgroupId=org.moxieapps -DartifactId=org.moxieapps.gwt.uploader -Dversion=1.1.0 -Dpackaging=jar -DgeneratePom=true

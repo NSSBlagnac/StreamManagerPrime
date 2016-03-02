@@ -1,0 +1,172 @@
+	.panelTableStream{
+	overflow: scroll;
+}
+
+.badge {
+    background-color: #999999;
+    border-radius: 10px;
+    color: #FFFFFF;
+    display: inline-block;
+    font-size: 13px;
+    font-weight: bold;
+    min-width: 10px;
+    padding: 4px 5px;
+   
+	height: 15px;
+	line-height: 1;
+}
+
+.bg-red, .bg-yellow, .bg-aqua, .bg-blue, .bg-light-blue, .bg-green, .bg-navy, .bg-teal, .bg-olive, .bg-lime, .bg-orange, .bg-fuchsia, .bg-purple, .bg-maroon, .bg-black {
+    color: #F9F9F9;
+}
+
+.labelStatus {
+	text-align: center;
+	font-family: verdana;
+	 width: 80px;
+}
+.labelEitInjection {
+	text-align: center;
+	font-family: verdana;
+	 width: 150px;
+}
+
+.labelFilename {
+	padding: 2px;
+	font-family: verdana;
+}
+.videoOn {
+	color: forestgreen;
+}
+.videoOff {
+	color: chocolate;
+}
+
+.labelBold {
+	color: royalblue;
+font-weight: 800;
+
+}
+.labelCenter {
+text-align: center;	
+}
+.bg-lime {
+    background-color: #01FF70 !important;
+}
+.bg-orange {
+    background-color: #FF851B !important;
+}
+
+.bg-navy {
+    background-color: #001F3F !important;
+}
+.bg-teal {
+    background-color: #39CCCC !important;
+}
+.bg-olive {
+    background-color: #3D9970 !important;
+}
+
+.bg-blue {
+    background-color: #0073B7 !important;
+}
+.bg-light-blue {
+    background-color: lightblue !important;
+}
+.bg-green {
+    background-color: lightgreen !important;
+}
+.bg-gray {
+    background-color: darkgray;
+}
+.bg-black {
+    background-color: #222222 !important;
+}
+.bg-red {
+    background-color: #F56954 !important;
+}
+.bg-yellow {
+    background-color: #F39C12 !important;
+}
+.bg-aqua {
+    background-color: #00C0EF !important;
+}
+.bg-burlywodd {
+	background-color: burlywood;
+}
+.bg-darkseagreen {
+	background-color: darkseagreen;
+}
+.bg-cadetblue {
+	background-color: cadetblue;
+}
+
+
+.imgAction {
+height: 24px;
+width: 24px;
+border-style: none;
+}
+.gwt-Button[disabled]:hover {
+	cursor: not-allowed;
+}
+
+.imgDeleteOff {
+background: url("../images/deleteOff.png") no-repeat scroll center center rgba(0, 0, 0, 0);
+}
+.imgDelete {
+background: url("../images/delete.png") no-repeat scroll center center rgba(0, 0, 0, 0);
+}
+.imgStopOff {
+background: url("../images/stopOff.png") no-repeat scroll center center rgba(0, 0, 0, 0);
+}
+
+
+.imgStop {
+background: url("../images/stop16x16.png") no-repeat scroll center center rgba(0, 0, 0, 0);
+}
+.imgBigStop {
+background: url("../images/stop24x24.png") no-repeat scroll center center rgba(0, 0, 0, 0);
+}
+
+.imgStartOff {
+background: url("../images/startOff.png") no-repeat scroll center center rgba(0, 0, 0, 0);
+}
+.imgStart {
+background: url("../images/start.png") no-repeat scroll center center rgba(0, 0, 0, 0);
+}
+.imgShow {
+	background: url("../images/show.png") no-repeat scroll center center rgba(0, 0, 0, 0);
+}
+.imgShowOff {
+	background: url("../images/showOff.png") no-repeat scroll center center rgba(0, 0, 0, 0);
+}
+.imgEnabled{
+	background: url("../images/enabled.png") no-repeat scroll center center rgba(0, 0, 0, 0);
+}
+.imgDisabled{
+	background: url("../images/disabled.png") no-repeat scroll center center rgba(0, 0, 0, 0);
+}
+
+.imgEdit{
+	background: url("../images/edit.png") no-repeat scroll center center rgba(0, 0, 0, 0);
+}
+.imgEditOff{
+	background: url("../images/Empty16x16.png") no-repeat scroll center center rgba(0, 0, 0, 0);
+}
+
+.imgCrypted{
+	background: url("../images/crypted.png") no-repeat scroll center center rgba(0, 0, 0, 0);
+}
+.imgWarn{
+	background: url("../images/warn.png") no-repeat scroll center center rgba(0, 0, 0, 0);
+}
+.imgNoVisible {
+	visibility: hidden;
+}
+.imgChangeStatus{
+	background: url("../images/setting.png") no-repeat scroll center center rgba(0, 0, 0, 0);
+}
+.imgRefresh{
+	background: url("../images/redo.png") no-repeat scroll center center rgba(0, 0, 0, 0);
+}

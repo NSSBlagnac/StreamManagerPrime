@@ -1,0 +1,142 @@
+package com.francetelecom.orangetv.eitinjector.shared.model.descriptor;
+
+import java.util.ArrayList;
+import java.util.Comparator;
+import java.util.List;
+
+import com.francetelecom.orangetv.eitinjector.shared.model.descriptor.ContentDescriptor.ContentNibbleLevel2;
+import com.francetelecom.orangetv.eitinjector.shared.model.divers.CodeAndDescription;
+
+public enum ContentNibbleLevel2 {
+
+	C0(ContentNibbleLevel1.UNDEFINED, "0x0", "undefined content"),
+
+	C1_0(ContentNibbleLevel1.MOVIE, "0x0", "movie/drama (general)"), C1_1(ContentNibbleLevel1.MOVIE, "0x01",
+			"detective/thriller"), C1_2(ContentNibbleLevel1.MOVIE, "0x02", "adventure/western/war"), C1_3(
+			ContentNibbleLevel1.MOVIE, "0x03", "science fiction/fantasy/horror"), C1_4(ContentNibbleLevel1.MOVIE,
+			"0x04", "comedy"), C1_5(ContentNibbleLevel1.MOVIE, "0x05", "soap/melodrama/folkloric"), C1_6(
+			ContentNibbleLevel1.MOVIE, "0x06", "romance"), C1_7(ContentNibbleLevel1.MOVIE, "0x07",
+			"serious/classical/religious/historical movie/drama"), C1_8(ContentNibbleLevel1.MOVIE, "0x08",
+			"adult movie/drama"),
+
+	C2_0(ContentNibbleLevel1.NEWS, "0x00", "news/current affairs (general)"), C2_1(ContentNibbleLevel1.NEWS,
+			"0x01", "news/weather report"), C2_2(ContentNibbleLevel1.NEWS, "0x02", "news magazine"), C2_3(
+			ContentNibbleLevel1.NEWS, "0x03", "documentary"), C2_4(ContentNibbleLevel1.NEWS, "0x04",
+			"discussion/interview/debate"),
+
+	C3_0(ContentNibbleLevel1.SHOW, "0x00", "show/game show (general)"), C3_1(ContentNibbleLevel1.SHOW, "0x01",
+			"game show/quiz/contest"), C3_2(ContentNibbleLevel1.SHOW, "0x02", "variety show"),
+
+	C4_0(ContentNibbleLevel1.SPORT, "0x00", "sports (general)"), C4_1(ContentNibbleLevel1.SPORT, "0x01",
+			"special events (Olympic Games, World Cup, etc.)"), C4_2(ContentNibbleLevel1.SPORT, "0x02",
+			"sports magazines"), C4_3(ContentNibbleLevel1.SPORT, "0x03", "football/soccer"), C4_4(
+			ContentNibbleLevel1.SPORT, "0x04", "tennis/squash"), C4_5(ContentNibbleLevel1.SPORT, "0x05",
+			"team sports (excluding football)"), C4_6(ContentNibbleLevel1.SPORT, "0x06", "athletics"), C4_7(
+			ContentNibbleLevel1.SPORT, "0x07", "motor sport"), C4_8(ContentNibbleLevel1.SPORT, "0x08",
+			"water sport"), C4_9(ContentNibbleLevel1.SPORT, "0x09", "winter sports"), C4_A(
+			ContentNibbleLevel1.SPORT, "0x0A", "equestrian"), C4_B(ContentNibbleLevel1.SPORT, "0x0B",
+			"martial sports"),
+
+	C5_0(ContentNibbleLevel1.CHILDREN, "0x00", "children's/youth programmes (general)"), C5_1(
+			ContentNibbleLevel1.CHILDREN, "0x01", "pre-school children's programmes"), C5_2(
+			ContentNibbleLevel1.CHILDREN, "0x02", "entertainment programmes for 6 to14"), C5_3(
+			ContentNibbleLevel1.CHILDREN, "0x03", "entertainment programmes for 10 to 16"), C5_4(
+			ContentNibbleLevel1.CHILDREN, "0x04", "informational/educational/school programmes"), C5_5(
+			ContentNibbleLevel1.CHILDREN, "0x05", "cartoons/puppets"),
+
+	C6_0(ContentNibbleLevel1.MUSIC, "0x00", "music/ballet/dance (general)"), C6_1(ContentNibbleLevel1.MUSIC,
+			"0x01", "rock/pop"), C6_2(ContentNibbleLevel1.MUSIC, "0x02", "serious music/classical music"), C6_3(
+			ContentNibbleLevel1.MUSIC, "0x03", "folk/traditional music"), C6_4(ContentNibbleLevel1.MUSIC, "0x04",
+			"jazz"), C6_5(ContentNibbleLevel1.MUSIC, "0x05", "musical"),
+
+	C7_0(ContentNibbleLevel1.ART, "0x00", "arts/culture (without music, general)"), C7_1(ContentNibbleLevel1.ART,
+			"0x01", "performing arts"), C7_2(ContentNibbleLevel1.ART, "0x02", "fine arts"), C7_3(
+			ContentNibbleLevel1.ART, "0x03", "religion"), C7_4(ContentNibbleLevel1.ART, "0x04",
+			"popular culture/traditional arts"), C7_5(ContentNibbleLevel1.ART, "0x05", "literature"), C7_6(
+			ContentNibbleLevel1.ART, "0x06", "film/cinema"), C7_7(ContentNibbleLevel1.ART, "0x07",
+			"experimental film/video"), C7_8(ContentNibbleLevel1.ART, "0x08", "broadcasting/press"), C7_9(
+			ContentNibbleLevel1.ART, "0x09", "new media"), C7_A(ContentNibbleLevel1.ART, "0x0A", "arts/culture"),
+
+	C8_0(ContentNibbleLevel1.SOCIAL, "0x00", "social/political issues/economics (general)"), C8_1(
+			ContentNibbleLevel1.SOCIAL, "0x01", "magazines/reports/documentary"), C8_2(ContentNibbleLevel1.SOCIAL,
+			"0x02", "economics/social advisory"), C8_3(ContentNibbleLevel1.SOCIAL, "0x03", "remarkable people"),
+
+	C9_0(ContentNibbleLevel1.SCIENCE, "0x00", "education/science/factual topics (general)"), C9_1(
+			ContentNibbleLevel1.SCIENCE, "0x01", "nature/animals/environment"), C9_2(ContentNibbleLevel1.SCIENCE,
+			"0x02", "technology/natural sciences"), C9_3(ContentNibbleLevel1.SCIENCE, "0x03",
+			"medicine/physiology/psychology"), C9_4(ContentNibbleLevel1.SCIENCE, "0x04",
+			"foreign countries/expeditions"), C9_5(ContentNibbleLevel1.SCIENCE, "0x05", "social/spiritual sciences"), C9_6(
+			ContentNibbleLevel1.SCIENCE, "0x06", "further education"), C9_7(ContentNibbleLevel1.SCIENCE, "0x07",
+			"languages"),
+
+	CA_0(ContentNibbleLevel1.LEISURE, "0x00", "leisure hobbies (general)"), CA_1(ContentNibbleLevel1.LEISURE,
+			"0x01", "tourism/travel"), CA_2(ContentNibbleLevel1.LEISURE, "0x02", "handicraft"), CA_3(
+			ContentNibbleLevel1.LEISURE, "0x03", "motoring"), CA_4(ContentNibbleLevel1.LEISURE, "0x04",
+			"fitness and health"), CA_5(ContentNibbleLevel1.LEISURE, "0x05", "cooking"), CA_6(
+			ContentNibbleLevel1.LEISURE, "0x06", "advertisement/shopping"), CA_7(ContentNibbleLevel1.LEISURE,
+			"0x07", "gardening"),
+
+	CB_0(ContentNibbleLevel1.SPECIAL, "0x00", "original language"), CB_1(ContentNibbleLevel1.SPECIAL, "0x01",
+			"black and white"), CB_2(ContentNibbleLevel1.SPECIAL, "0x02", "unpublished"), CB_3(
+			ContentNibbleLevel1.SPECIAL, "0x03", "live broadcast");
+
+	public static ContentNibbleLevel2 get(String parentCode, String code) {
+
+		List<ContentNibbleLevel2> listCategories = ContentNibbleLevel2.getForLevel1(ContentNibbleLevel1
+				.get(parentCode));
+
+		for (ContentNibbleLevel2 nibble2 : listCategories) {
+			if (nibble2.getCode().equals(code)) {
+				return nibble2;
+			}
+		}
+		return C0;
+	}
+
+	public static Comparator<ContentNibbleLevel2> getDescriptionComparator() {
+		return new Comparator<ContentNibbleLevel2>() {
+
+			@Override
+			public int compare(ContentNibbleLevel2 o1, ContentNibbleLevel2 o2) {
+				return o1.getDescription().compareTo(o2.getDescription());
+			}
+		};
+	}
+
+	public static List<ContentNibbleLevel2> getForLevel1(ContentNibbleLevel1 level1) {
+
+		List<ContentNibbleLevel2> list = new ArrayList<ContentNibbleLevel2>();
+
+		for (ContentNibbleLevel2 level2 : ContentNibbleLevel2.values()) {
+			if (level2.getParent() == level1) {
+				list.add(level2);
+			}
+		}
+
+		return list;
+	}
+
+	private ContentNibbleLevel1 parent;
+
+	public ContentNibbleLevel1 getParent() {
+		return this.parent;
+	}
+
+	private CodeAndDescription codeAndDescription;
+
+	public String getCode() {
+		return this.codeAndDescription.getCode();
+	}
+
+	public String getDescription() {
+		return this.codeAndDescription.getDescription();
+	}
+
+	private ContentNibbleLevel2() {
+	}
+
+	private ContentNibbleLevel2(ContentNibbleLevel1 parent, String code, String description) {
+		this.parent = parent;
+		this.codeAndDescription = new CodeAndDescription(code, description);
+	}
+}

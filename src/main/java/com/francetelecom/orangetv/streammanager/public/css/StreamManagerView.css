@@ -1,0 +1,235 @@
+
+.gwt-DialogBox .dialogMiddleCenter {
+    background: none repeat scroll 0 0 aquamarine;
+    padding: 3px;
+}
+.advanced-TabPanel {
+	 border-color: blue;
+   border-style: solid;
+   border-width: medium;
+	 background-color: lightcyan;
+}
+
+
+.gwt-TabBar .gwt-TabBarItem {
+cursor: default;
+background: #ccc;
+color: #333;
+font-weight: bold;
+}
+
+.gwt-TabBarItem-selected .panelEitTitle {
+background-color: green;
+color: beige;
+} 
+
+.selected .panelEitTitle {
+background-color: blue;
+color: beige;
+} 
+.panelEitTitle:hover {
+	background-color: lightcoral;
+}
+.panelEitTitle {
+font-size: 1em;
+font-weight: bold;
+color: green;
+background-color: lightyellow;
+width: 150px;
+margin-right: 20px;
+padding: 5px;
+border-radius: 5px;
+}
+
+#adminResultCommand {
+background-color: darkblue;
+color: orange;
+height: 400px;
+width: 98%;
+padding: 5px;
+overflow-y: auto;
+resize: both;
+}
+
+.gwt-TabBarItem-selected .panelDetailTitle {
+background-color: blue;
+color: beige;
+}
+.selected .panelDetailTitle {
+background-color: blue;
+color: beige;
+} 
+.panelDetailTitle:hover {
+	background-color: lightcoral;
+}
+.panelDetailTitle {
+font-size: 1em;
+font-weight: bold;
+color: blue;
+background-color: lightyellow;
+width: 250px;
+margin-right: 20px;
+padding: 5px;
+border-radius: 5px;
+}
+.panelShowAction {
+   height: 350px;
+   width: 154px;
+   background-color: lightcyan;
+   	border-color: blue;
+   border-style: solid;
+   border-width: thin;
+}
+.panelSendAction {
+   background-color: lightcyan;
+   	border-color: blue;
+   border-style: solid;
+   border-width: thin;
+}
+.panelDescriptor {
+   min-height: 300px;
+   min-width: 500px;
+   background-color: lightcyan;
+}
+.panelContentDescriptor{
+	border-color: blue;
+   border-style: solid;
+   border-width: thin;
+}
+.panelInput {
+	background-color: beige;
+	height: 40px;
+}
+
+.buttonStyle {
+	width: 100px;
+}
+.buttonCommand.selected {
+	background-color: green;
+	color: beige;
+}
+.buttonCommand:hover{
+	background-color: lightcoral;
+}
+.buttonCommand {
+	width: 110px;
+	background-color: beige;
+	color: green;
+	margin: 10px;
+}
+
+.marginTop10 {
+	margin-top: 20px;
+}
+
+.imgErase {
+	background: url("../images/delete.png");
+    background-repeat: no-repeat;	
+    width: 16px;
+	height: 16px;
+	background-position: 50%;
+}
+
+#panelUploadVideo {
+width: 100%;
+border-style: dashed;
+margin-top: 10px;	
+}
+
+
+#profileUserText {
+	 background-color: #FFFF00;
+    border-radius: 15px;
+    color: #0000FF;
+    padding: 5px;
+}
+
+#targetText {
+background-color: beige;
+color: darkmagenta;
+padding: 5px;
+}
+
+.log {
+margin-top: 1px;
+padding-left: 20px;
+}
+.debug {
+color: beige;
+}
+.error {
+color: orangered;
+}
+.cursorWait{
+	cursor: wait;
+}
+.boxError {
+	background-color: orange;
+	color: crimson;
+}
+.spDiv{
+	background-color: darkblue;
+	color:beige;
+}
+.spSpan{
+	background-color: darkblue;
+}
+.spSpanData{
+	color: yellow;
+}
+.spTitle {
+	background-color: beige;
+color: darkblue;
+padding: 5px;
+text-align: center;
+}
+
+
+
+/*Upload Progress Bar */
+.gwt-ProgressBar-shell {
+    border: 2px solid #848280;
+    background-color: #454545;
+    height: 16px;
+    width: 50%;
+    margin-left: 10px;
+}
+
+.gwt-ProgressBar-shell .gwt-ProgressBar-bar {
+    background-color: #BB4B44;
+}
+
+.gwt-ProgressBar-shell .gwt-ProgressBar-text {
+    padding: 0;
+    margin: 0;
+    color: white;
+}
+/*Upload  */
+.uploadDone {
+	 background-color: lightgreen !important;
+}
+.uploadError {
+	background-color: #F56954 !important;
+}
+.uploadCanceled {
+	  background-color: darkgray;
+}
+.uploadInProgress {
+	 background-color: #FF851B !important;
+}
+
+
+.buttonViewUpload.buttonOff {
+	background-color: lightgray;
+	cursor: not-allowed;
+}
+.buttonViewUpload {
+	width: 180px;
+	background-color: burlywood;
+	color: blue;
+	margin: 10px;
+	text-align: center;
+padding: 5px;
+border-radius: 10px;
+cursor: pointer;
+}

@@ -1,0 +1,189 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<web-app xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://java.sun.com/xml/ns/javaee 
+              http://java.sun.com/xml/ns/javaee/web-app_2_5.xsd"
+         version="2.5"
+         xmlns="http://java.sun.com/xml/ns/javaee">
+
+
+
+<!--  ServletContextListener -->
+<listener>
+  <listener-class>com.francetelecom.orangetv.streammanager.server.manager.ContextManager</listener-class>
+</listener>
+
+
+
+ <!-- ===================================== -->
+ <!-- MYSQL PROD                            -->
+ <!-- ===================================== -->
+  
+  <context-param>
+   <param-name>jdbcDriver</param-name>
+   <param-value>com.mysql.jdbc.Driver</param-value>
+</context-param>
+
+  <context-param>
+   <param-name>bddUrl</param-name>
+   <param-value>jdbc:mysql://${bdd_ip}/${bdd_name}</param-value>
+</context-param>
+
+  <context-param>
+   <param-name>bddUser</param-name>
+   <param-value>${bddUser}</param-value>
+</context-param>  
+
+  <context-param>
+   <param-name>bddPwd</param-name>
+   <param-value>${bddPwd}</param-value>
+</context-param>
+
+  <context-param>
+   <param-name>modeTest</param-name>
+   <param-value>false</param-value>
+</context-param> 
+
+<context-param>
+   <param-name>refreshIntervalMs</param-name>
+   <param-value>5000</param-value>
+</context-param> 
+   
+<!-- ===================================== --> 
+<!-- Credential pour UserProfil admin      -->
+<!-- ===================================== -->
+ <context-param>
+   <param-name>login_admin</param-name>
+   <param-value>${login_admin}</param-value>
+</context-param> 
+<context-param>
+   <param-name>pwd_admin</param-name>
+   <param-value>${pwd_admin}</param-value>
+</context-param> 
+
+<!-- ===================================== -->
+<!-- Credential pour UserProfil manager     -->
+<!-- ===================================== -->
+ <context-param>
+   <param-name>login_manager</param-name>
+   <param-value>${login_manager}</param-value>
+</context-param> 
+<context-param>
+   <param-name>pwd_manager</param-name>
+   <param-value>${pwd_manager}</param-value>
+</context-param> 
+  
+ <!-- ===================================== -->   
+ <!-- Reserved plages                       -->
+ <!-- ===================================== -->
+ <context-param>
+   <param-name>protected_stream_lcn</param-name>
+   <param-value>${protected_stream_lcn}</param-value>
+</context-param> 
+<context-param>
+   <param-name>protected_stream_usi</param-name>
+   <param-value>${protected_stream_usi}</param-value>
+</context-param> 
+   <context-param>
+   <param-name>protected_stream_triplet</param-name>
+   <param-value>${protected_stream_triplet}</param-value>
+</context-param>
+   <context-param>
+   <param-name>protected_stream_address</param-name>
+   <param-value>${protected_stream_address}</param-value>
+</context-param>
+  
+ <!-- ===================================== --> 
+ <!-- Connection SSH avec server multicat   -->
+ <!-- ===================================== -->
+<context-param>
+   <param-name>multicat_ip</param-name>
+   <param-value>${multicat_ip}</param-value>
+</context-param> 
+<context-param>
+   <param-name>multicat_user</param-name>
+   <param-value>${multicat_user}</param-value>
+</context-param>
+<context-param>
+   <param-name>multicat_pwd</param-name>
+   <param-value>${multicat_pwd}</param-value>
+</context-param>  
+<context-param>
+   <param-name>multicat_path</param-name>
+   <param-value>/usr/local/multicat-tools</param-value>
+</context-param> 
+<context-param>
+   <param-name>multicat_logs</param-name>
+   <param-value>/logs/multicat-supervisor.log, /logs/multicat-eit.log</param-value>
+</context-param> 
+<context-param>
+   <param-name>multicat_process</param-name>
+   <param-value>multicat-supervisor, multicat-eit</param-value>
+</context-param> 
+<context-param>
+   <param-name>multicat_script</param-name>
+   <param-value>/sh/multicat-supervisor.sh</param-value>
+</context-param> 
+<context-param>
+   <param-name>multicat_upload_paths</param-name>
+   <param-value>/home/qualif/tests/, /usr/local/multicat-tools/videos</param-value>
+</context-param> 
+
+
+
+
+<!-- ===================================== -->
+<!--    SERVICE APPLICATION                -->
+<!-- ===================================== -->
+
+  <servlet>
+    <servlet-name>streamManagerServlet</servlet-name>
+    <servlet-class>com.francetelecom.orangetv.streammanager.server.service.StreamMulticatServiceImpl</servlet-class>
+  </servlet>
+   <servlet-mapping>
+    <servlet-name>streamManagerServlet</servlet-name>
+    <url-pattern>/streammanager/MyService</url-pattern>
+  </servlet-mapping> 
+  
+  <!-- ===================================== -->
+<!--    EIT INJECTOR SERVLET                     -->
+<!-- ===================================== -->
+
+<servlet>
+    <servlet-name>receiveEitServlet</servlet-name>
+    <servlet-class>com.francetelecom.orangetv.streammanager.server.ReceiveEitServlet</servlet-class>
+  </servlet> 
+   <servlet-mapping>
+    <servlet-name>receiveEitServlet</servlet-name>
+    <url-pattern>/streammanager/sendeit</url-pattern>
+  </servlet-mapping>
+  
+  
+ 
+ <!-- ===================================== -->
+<!--    UPLOAD SERVLET                      -->
+<!-- ===================================== --> 
+  
+  <servlet>
+    <servlet-name>uploadServlet</servlet-name>
+    <servlet-class>com.francetelecom.orangetv.streammanager.server.service.FileUploadServlet</servlet-class>
+  </servlet>
+  
+  <servlet-mapping>
+    <servlet-name>uploadServlet</servlet-name>
+    <url-pattern>/fileupload</url-pattern>
+  </servlet-mapping>
+  
+  <!--  max upload lenght -->
+<context-param>
+   <param-name>maxLenghtUploadMo</param-name>
+   <param-value>100</param-value>
+</context-param>  
+  
+  
+  <!-- Default page to serve -->
+  <welcome-file-list>
+    <welcome-file>StreamManager.html</welcome-file>
+  </welcome-file-list>
+
+
+</web-app>
