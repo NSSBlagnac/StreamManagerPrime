@@ -8,9 +8,9 @@ Librairie externe
 
 La librairie moxieapps.gwt.uploader utilisée pour l'upload des videos doit etre génerée et installée dans le repository maven local.
 
-- récupérer les sources sur github: http://www.moxiegroup.com/moxieapps/gwt-uploader/
+- récupérer le jar sur: http://www.moxiegroup.com/moxieapps/gwt-uploader/
 - creer l'artifact maven:
-mvn install:install-file  -Dfile=./lib/org.moxieapps.gwt.uploader-1.1.0.jar -DgroupId=org.moxieapps -DartifactId=org.moxieapps.gwt.uploader -Dversion=1.1.0 -Dpackaging=jar -DgeneratePom=true
+mvn install:install-file  -Dfile=./org.moxieapps.gwt.uploader-1.1.0.jar -DgroupId=org.moxieapps -DartifactId=org.moxieapps.gwt.uploader -Dversion=1.1.0 -Dpackaging=jar -DgeneratePom=true
 
 
 Compilation et packaging du StreamManager
