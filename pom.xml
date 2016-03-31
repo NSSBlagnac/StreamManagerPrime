@@ -119,6 +119,7 @@
     <filter>${configuration.directory}/${profile.resources.filter}</filter>
     </filters>
     
+    <!-- logging.properties filtering -->
   <resources>
       <resource>
         <directory>src/main/resources</directory>
@@ -171,6 +172,7 @@
           
     
       <!-- war plugin -->
+      <!-- web.xml.tofilter filtering to web.xml -->
       <plugin>
       
         <groupId>org.apache.maven.plugins</groupId>
@@ -192,6 +194,7 @@
       </plugin>   
     
       <!-- assembly plugin -->
+      <!--  context.xml filtering to StreamManager.xml -->
       <plugin>
        <artifactId>maven-assembly-plugin</artifactId>
        <version>2.6</version>

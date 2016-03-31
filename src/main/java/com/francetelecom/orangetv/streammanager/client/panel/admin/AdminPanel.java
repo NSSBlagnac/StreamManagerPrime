@@ -408,7 +408,7 @@ public class AdminPanel extends AbstractPanel {
 			sb.append(videoFilename);
 			sb.append("); ");
 
-			sb.append("sudo ingests -p $PID ");
+			sb.append("sudo ../bin/ingests -p $PID ");
 			sb.append(videoFilename);
 
 			break;

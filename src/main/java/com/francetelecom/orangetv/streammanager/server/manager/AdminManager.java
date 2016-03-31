@@ -119,7 +119,7 @@ public class AdminManager implements IMyServices {
 	}
 
 	// cd /usr/local/multicat-tools/videos; PID=$(../bin/mpeg_print_pcr <
-	// france2.ts) ; sudo ingests -p $PID france2.ts
+	// france2.ts) ; sudo ../bin/ingests -p $PID france2.ts
 	public CmdResponse createAuxVideoFileWithIngest(String videoDirPath, String videoFilename) {
 
 		log.info("createAuxVideoFileWithIngest() videoDirPath: " + videoDirPath + " - videoFilename: " + videoFilename);
@@ -136,7 +136,7 @@ public class AdminManager implements IMyServices {
 		sb.append(videoFilename);
 		sb.append("); ");
 
-		sb.append("sudo ingests -p $PID ");
+		sb.append("sudo ../bin/ingests -p $PID ");
 		sb.append(videoFilename);
 
 		CmdRequest request = new CmdRequest(sb.toString(), true);
