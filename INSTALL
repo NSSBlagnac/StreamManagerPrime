@@ -21,7 +21,7 @@ packaging: mvn clean package -P<profile>
 Une archive StreamManagerXXX.tar.gz est créée.
 Elle contient les fichiers:
 
-- StreamManagerXXX.xml à configurer puis à copier dans le repertoire /conf/Catalina/localhost de tomcat
+- StreamManager-<version>-<profile>.xml à configurer puis à copier dans le repertoire /conf/Catalina/localhost de tomcat
 - StreamManagerXXX.war à copier dans le répertoire /webapps de tomcat
 
 
@@ -33,7 +33,7 @@ POUR LES EQUIPES EXTERNES
 
 mvn clean package
 
->> streammanager-1.2-SNAPSHOT.tar.gz
+>> streammanager-<version>.tar.gz
 	- StreamManager.war
 	- StreamManager.xml
 
@@ -43,7 +43,7 @@ UNIQUEMENT POUR L'EQUIPE NEWTV
 
 mvn clean package -Pprod
 
->> streammanager-1.2-SNAPSHOT-prod.tar.gz
+>> streammanager-<version>-prod.tar.gz
 	- StreamManagerProd.war
 	- StreamManagerProd.xml  (reste à configurer les mots de passe)
 	
@@ -55,7 +55,7 @@ UNIQUEMENT POUR L'EQUIPE NEWTV
 
 mvn clean package -Pdev
 
->> streammanager-1.2-SNAPSHOT-dev.tar.gz
+>> streammanager-<version>-dev.tar.gz
 	- StreamManagerDev.war
 	- StreamManagerDev.xml (reste à configurer les mots de passe)
 
