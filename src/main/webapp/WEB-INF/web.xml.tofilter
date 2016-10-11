@@ -125,7 +125,7 @@
 </context-param> 
 <context-param>
    <param-name>multicat_upload_paths</param-name>
-   <param-value>/home/qualif/tests/, /usr/local/multicat-tools/videos</param-value>
+   <param-value>${multicat_upload_paths}</param-value>
 </context-param> 
 
 
