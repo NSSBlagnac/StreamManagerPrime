@@ -392,7 +392,7 @@ public class AdminPanel extends AbstractPanel {
 		}
 		case delete: {
 
-			sb.append("sudo rm ");
+			sb.append("rm ");
 			sb.append(videoPathname);
 			sb.append(videoFilename);
 			break;
@@ -408,7 +408,7 @@ public class AdminPanel extends AbstractPanel {
 			sb.append(videoFilename);
 			sb.append("); ");
 
-			sb.append("sudo ../bin/ingests -p $PID ");
+			sb.append("../bin/ingests -p $PID ");
 			sb.append(videoFilename);
 
 			break;
@@ -443,7 +443,6 @@ public class AdminPanel extends AbstractPanel {
 		}
 
 		StringBuilder sb = new StringBuilder();
-		sb.append("sudo ");
 		sb.append(this.adminInfo.getSupervisorScriptPathname());
 		sb.append(" ");
 		sb.append(datas.getAction().name());

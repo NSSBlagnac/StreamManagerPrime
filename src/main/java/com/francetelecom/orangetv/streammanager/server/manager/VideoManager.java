@@ -154,10 +154,10 @@ public class VideoManager implements IMyServices {
 			}
 
 			// =============================================================
-			// copier le fichier en sudo vers /multicat-tools/videos
+			// copier le fichier en vers /multicat-tools/videos
 			// =============================================================
 			String filename = new File(videoPath).getName();
-			String cmd = "sudo cp  " + this.multicatServerInfo.getUploadMulticatTempPath() + filename + " "
+			String cmd = "cp  " + this.multicatServerInfo.getUploadMulticatTempPath() + filename + " "
 					+ this.multicatServerInfo.getMulticatVideoPath();
 			response = AdminManager.get().executeRemoteCommand(new CmdRequest(cmd, true));
 
@@ -288,8 +288,8 @@ public class VideoManager implements IMyServices {
 
 				log.config("success in uploading video " + videoPath + " to multicat server!");
 				String filename = new File(videoPath).getName();
-				// copier le fichier en sudo vers /multicat-tools/videos
-				String cmd = "sudo cp  " + this.multicatServerInfo.getUploadMulticatTempPath() + filename + " "
+				// copier le fichier vers /multicat-tools/videos
+				String cmd = "cp  " + this.multicatServerInfo.getUploadMulticatTempPath() + filename + " "
 						+ this.multicatServerInfo.getMulticatVideoPath();
 				response = AdminManager.get().executeRemoteCommand(new CmdRequest(cmd, true));
 

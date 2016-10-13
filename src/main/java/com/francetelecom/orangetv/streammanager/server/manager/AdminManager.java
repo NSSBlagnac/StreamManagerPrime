@@ -119,7 +119,7 @@ public class AdminManager implements IMyServices {
 	}
 
 	// cd /usr/local/multicat-tools/videos; PID=$(../bin/mpeg_print_pcr <
-	// france2.ts) ; sudo ../bin/ingests -p $PID france2.ts
+	// france2.ts) ; ../bin/ingests -p $PID france2.ts
 	public CmdResponse createAuxVideoFileWithIngest(String videoDirPath, String videoFilename) {
 
 		log.info("createAuxVideoFileWithIngest() videoDirPath: " + videoDirPath + " - videoFilename: " + videoFilename);
@@ -136,7 +136,7 @@ public class AdminManager implements IMyServices {
 		sb.append(videoFilename);
 		sb.append("); ");
 
-		sb.append("sudo ../bin/ingests -p $PID ");
+		sb.append("../bin/ingests -p $PID ");
 		sb.append(videoFilename);
 
 		CmdRequest request = new CmdRequest(sb.toString(), true);
@@ -221,7 +221,7 @@ public class AdminManager implements IMyServices {
 	}
 
 	// -------------------------------------------- private methods
-	// sudo rm /usr/local/multicat-tools/videos/filename.ts
+	// rm /usr/local/multicat-tools/videos/filename.ts
 	// si fichier absent exitCode 1 (failure)
 	private CmdResponse deleteFile(String filePathname) {
 
@@ -235,7 +235,7 @@ public class AdminManager implements IMyServices {
 			return response;
 		}
 		StringBuilder sb = new StringBuilder();
-		sb.append("sudo rm ");
+		sb.append("rm ");
 		sb.append(filePathname);
 
 		CmdRequest request = new CmdRequest(sb.toString(), true);
