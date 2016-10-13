@@ -165,7 +165,7 @@ public class AdminPanel extends AbstractPanel {
 				break;
 
 			case upload:
-				panel = new UploadPanel(this.adminInfo.getUploadSrcPath(), this.adminInfo.getUploadTargetPath());
+				panel = new UploadPanel(this.adminInfo.getUploadSrcPath(), this.adminInfo.getMulticatVideoPath());
 				break;
 
 			case gwtupload:

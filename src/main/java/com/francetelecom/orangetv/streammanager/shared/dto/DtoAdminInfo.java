@@ -31,16 +31,10 @@ public class DtoAdminInfo implements IDto, Serializable {
 
 	// chemin source sur server tomcat
 	private String uploadSrcPath;
-	// chemin cible sur server multicat
-	private String uploadTargetPath;
 
 	private int maxUploadSizeMo;
 
 	// ------------------------------------- accessors
-
-	public String getUploadTargetPath() {
-		return uploadTargetPath;
-	}
 
 	public int getMaxUploadSizeMo() {
 		return maxUploadSizeMo;
@@ -64,10 +58,6 @@ public class DtoAdminInfo implements IDto, Serializable {
 
 	public void setMulticatVideoPath(String multicatVideoPath) {
 		this.multicatVideoPath = multicatVideoPath;
-	}
-
-	public void setUploadTargetPath(String uploadTargetPath) {
-		this.uploadTargetPath = uploadTargetPath;
 	}
 
 	public String getUploadSrcPath() {

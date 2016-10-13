@@ -208,7 +208,6 @@ public class AdminManager implements IMyServices {
 				this.adminInfo.setSupervisorScriptPathname(path + this.multicatServerInfo.getSupervisorScript());
 
 				this.adminInfo.setUploadSrcPath(this.multicatServerInfo.getUploadTomcatPath());
-				this.adminInfo.setUploadTargetPath(this.multicatServerInfo.getUploadMulticatTempPath());
 
 				this.adminInfo.setMulticatVideoPath(this.multicatServerInfo.getMulticatVideoPath());
 				this.adminInfo.setMulticatBinPath(this.multicatServerInfo.getPath() + "/bin");
@@ -374,8 +373,6 @@ public class AdminManager implements IMyServices {
 		// chemin sur le server tomcat : video GWT uploaded by user
 		private String uploadTomcatPath;
 
-		// chemin sur le server multicat: video scp uploaded
-		private String uploadMulticatTempPath;
 		// chemin sur le server multicat: videos multicats
 		private String multicatVideoPath;
 
@@ -383,14 +380,6 @@ public class AdminManager implements IMyServices {
 		private int maxUploadSizeMo;
 
 		// ---------------------------------- accessors
-
-		public String getUploadMulticatTempPath() {
-			return uploadMulticatTempPath;
-		}
-
-		public void setUploadMulticatTempPath(String uploadMulticatTempPath) {
-			this.uploadMulticatTempPath = uploadMulticatTempPath;
-		}
 
 		public String getMulticatVideoPath() {
 			return multicatVideoPath;

@@ -100,13 +100,7 @@ public class ServletManager {
 		String process = servletContext.getInitParameter(KEY_MULTICAT_PROCESS);
 		multicatServerInfo.setProcessList(ValueHelper.buildListItems(process));
 
-		String uploadPaths = servletContext.getInitParameter(KEY_MULTICAT_UPLOAD_PATHS);
-		List<String> pathList = ValueHelper.buildListItems(uploadPaths);
-		if (pathList != null && pathList.size() == 2) {
-
-			multicatServerInfo.setUploadMulticatTempPath(pathList.get(0));
-			multicatServerInfo.setMulticatVideoPath(pathList.get(1));
-		}
+		multicatServerInfo.setMulticatVideoPath(servletContext.getInitParameter(KEY_MULTICAT_UPLOAD_PATHS));
 
 		Object directory = servletContext.getAttribute("javax.servlet.context.tempdir");
 

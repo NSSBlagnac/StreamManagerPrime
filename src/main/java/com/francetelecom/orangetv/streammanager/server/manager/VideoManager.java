@@ -146,33 +146,19 @@ public class VideoManager implements IMyServices {
 			// server de qualif
 			// =============================================================
 			response = AdminManager.get().copyFileToRemoteWithLinuxScp(videoPath,
-					this.multicatServerInfo.getUploadMulticatTempPath());
+					this.multicatServerInfo.getMulticatVideoPath());
 			if (response.isSuccess()) {
-				log.config("success in uploading video " + videoPath + " to multicat server!");
+				log.config("success in uploading video " + videoPath + " to "
+						+ this.multicatServerInfo.getMulticatVideoPath() + "!");
 			} else {
-				throw new EitException("Error in uploading video " + videoPath + " to multicat server!");
+				throw new EitException("Error in uploading video " + videoPath + " to "
+						+ this.multicatServerInfo.getMulticatVideoPath() + "!");
 			}
 
 			// =============================================================
-			// copier le fichier en vers /multicat-tools/videos
+			// lancer le script pour la création fichier aux
 			// =============================================================
 			String filename = new File(videoPath).getName();
-			String cmd = "cp  " + this.multicatServerInfo.getUploadMulticatTempPath() + filename + " "
-					+ this.multicatServerInfo.getMulticatVideoPath();
-			response = AdminManager.get().executeRemoteCommand(new CmdRequest(cmd, true));
-
-			if (response.isSuccess()) {
-				log.config("Success in copying video " + filename + " to "
-						+ this.multicatServerInfo.getMulticatVideoPath() + "!");
-
-			} else {
-				throw new EitException("Error in copying video " + filename + " to "
-						+ this.multicatServerInfo.getMulticatVideoPath() + "!");
-			}
-
-			// =============================================================
-			// reste à lancer le script pour la création fichier aux
-			// =============================================================
 			response = AdminManager.get().createAuxVideoFileWithIngest(this.multicatServerInfo.getMulticatVideoPath(),
 					filename);
 			if (response.isSuccess()) {
@@ -184,7 +170,7 @@ public class VideoManager implements IMyServices {
 			}
 
 			// =============================================================
-			// Puis extraction de la table PMT et mise en base de donnees
+			// extraction de la table PMT et mise en base de donnees
 			// =============================================================
 			response = AdminManager.get().extractPmtTableFromVideofile(this.multicatServerInfo.getMulticatVideoPath(),
 					filename);
@@ -271,57 +257,6 @@ public class VideoManager implements IMyServices {
 			}
 		} catch (EitException e) {
 			log.severe("Error in updateVideoWithPmtTable() " + e.getMessage());
-		}
-	}
-
-	public void sendVideoToMulticatAndFinishProcessOld(int videoId, String videoPath) throws EitException {
-
-		if (this.multicatServerInfo == null) {
-			return;
-		}
-		VideoDao.get().updateStatus(videoId, VideoStatus.PENDING);
-		CmdResponse response = AdminManager.get().copyFileToRemoteWithLinuxScp(videoPath,
-				this.multicatServerInfo.getUploadMulticatTempPath());
-
-		try {
-			if (response.isSuccess()) {
-
-				log.config("success in uploading video " + videoPath + " to multicat server!");
-				String filename = new File(videoPath).getName();
-				// copier le fichier vers /multicat-tools/videos
-				String cmd = "cp  " + this.multicatServerInfo.getUploadMulticatTempPath() + filename + " "
-						+ this.multicatServerInfo.getMulticatVideoPath();
-				response = AdminManager.get().executeRemoteCommand(new CmdRequest(cmd, true));
-
-				if (response.isSuccess()) {
-
-					log.config("Success in copying video " + filename + " to "
-							+ this.multicatServerInfo.getMulticatVideoPath() + "!");
-
-					// reste à lancer le script pour la création fichier aux
-					response = AdminManager.get().createAuxVideoFileWithIngest(
-							this.multicatServerInfo.getMulticatVideoPath(), filename);
-					if (response.isSuccess()) {
-
-						log.config("Success in generating aux file for " + filename + "!");
-
-						VideoDao.get().updateStatus(videoId, VideoStatus.READY);
-					} else {
-						throw new EitException("Error in generating aux file for " + filename + "!");
-					}
-
-				} else {
-					throw new EitException("Error in copying video " + filename + " to "
-							+ this.multicatServerInfo.getMulticatVideoPath() + "!");
-				}
-
-			} else {
-
-				throw new EitException("Error in uploading video " + videoPath + " to multicat server!");
-			}
-		} catch (EitException ex) {
-			VideoDao.get().updateStatus(videoId, VideoStatus.ERROR);
-			throw ex;
 		}
 	}
 

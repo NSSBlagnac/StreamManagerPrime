@@ -53,7 +53,7 @@
 <Parameter name="multicat_pwd" value="${multicat_pwd}" override="false"/>
 <Parameter name="multicat_path" value="/usr/local/multicat-tools" override="false"/>
 
-<Parameter name="multicat_upload_paths" value="/home/qualif/tests/, /usr/local/multicat-tools/videos" override="false"/>
+<Parameter name="multicat_upload_paths" value="/usr/local/multicat-tools/videos" override="false"/>
 
 <!-- ===================================== -->
 <!-- FILE UPLOAD                           -->
